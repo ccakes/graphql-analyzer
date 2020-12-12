@@ -122,7 +122,7 @@ export function analyzeQuery(
     const context: ExecutionContext = {
         fragments,
         schema,
-        variableValues: coercedVariableValues.coerced
+        variableValues: coercedVariableValues.coerced ? coercedVariableValues.coerced : {}
     };
     const roots = collectFieldsFromOperation(
         context,
